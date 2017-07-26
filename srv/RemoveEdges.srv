@@ -1,0 +1,9 @@
+# id of the graph
+int32 graph_id
+
+# IDs of the edges to remove
+int32[] ids
+
+---
+
+bool success

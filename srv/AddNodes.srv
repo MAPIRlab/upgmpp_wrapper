@@ -1,0 +1,7 @@
+# id of the graph where to add the nodes
+int32 graph_id
+
+# the nodes to add (or update, if node id already exists)
+Node[] nodes
+---
+bool success

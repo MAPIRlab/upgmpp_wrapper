@@ -1,0 +1,14 @@
+# ID of this graph (client must make sure it is unique)
+int32 id
+
+# vector of object classes used in this graph (e.g. table, chair, mug)
+string[] class_names
+
+# vector containing the names of the node features used (e.g. area, height)
+string[] node_feature_names
+
+# vector with the names of the edge features used
+string[] edge_feature_names
+
+---
+bool success

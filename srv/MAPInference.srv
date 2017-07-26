@@ -1,0 +1,12 @@
+# ID of the graph where we want to perform inference
+int32 graph_id
+
+# inference method to use (one of: 'ICM', 'ICMGreedy', 'Exact', 'LBP')
+string inference_method
+
+---
+
+int32[] results_node_id
+int32[] results_value
+
+bool success

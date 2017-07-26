@@ -1,0 +1,9 @@
+# id of the graph
+int32 graph_id
+
+# vector with the IDs of the nodes to delete
+int32[] ids
+
+---
+
+bool success

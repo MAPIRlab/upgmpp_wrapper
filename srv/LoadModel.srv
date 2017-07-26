@@ -1,0 +1,5 @@
+# name of the file containing the stored model (weights for node and edge types)
+string model_file_name
+
+---
+bool success

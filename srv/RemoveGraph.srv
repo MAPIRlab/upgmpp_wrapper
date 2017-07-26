@@ -1,0 +1,6 @@
+# id of the graph to be removed
+int32 graph_id
+
+---
+
+bool success

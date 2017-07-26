@@ -1,0 +1,22 @@
+# vector containing the ids of the graphs to be used as training samples
+int32[] graph_ids
+
+# Ground truth of the different graphs
+GroundTruth[] ground_truths
+
+# This vector establish the type of the used edge features.
+# 0: SYMMETRIC edge feature: forces weights of (1,2) = (2,1)
+#    e.g.: edge (1,2): value 0.3 (type 0)
+#          (equivalent to edge (2,1): ...)
+#
+# 1: ASYMMETRIC edge feature: weight of (1,2) is independent of (2,1)
+#
+# 2: OPPOSITE of previous edge feature: forces weight matrix to be the
+#    transposed matrix of previous feature (of type 1)
+#    e.g.: edge (1,2): value  0.3 (type 1)
+#          edge (2,1): value -0.3 (type 2)
+int32[] edge_feature_types
+
+---
+
+bool success

@@ -1,0 +1,7 @@
+# id of the graph where to add the nodes
+int32 graph_id
+
+# the edge to add (or update, if edge id already exists)
+Edge[] edges
+---
+bool success
