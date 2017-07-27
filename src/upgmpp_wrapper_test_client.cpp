@@ -252,14 +252,12 @@ void UpgmPPTestClient::run_test()
 
     ros::ServiceClient training_srv = m_nh.serviceClient<upgmpp_wrapper::Training>("upgmpp_wrapper/training");
 
-    upgmpp_wrapper::Training::Request reqTraining;
-    upgmpp_wrapper::Training::Response respTraining;
-
-    reqTraining.file_name= "weights.txt";
+    upgmpp_wrapper::Training::Request req_training;
+    upgmpp_wrapper::Training::Response resp_training;
 
     // Graphs used during training
-    reqTraining.graph_ids.push_back( 42 );
-    reqTraining.graph_ids.push_back( 43 );
+    req_training.graph_ids.push_back( 42 );
+    req_training.graph_ids.push_back( 43 );
 
     // Ground truths
     upgmpp_wrapper::GroundTruth groundTruth1;
@@ -275,19 +273,19 @@ void UpgmPPTestClient::run_test()
     groundTruth2.node_ids.push_back( 9 );
     groundTruth2.ground_truth.push_back( 1 );
 
-    reqTraining.ground_truths.push_back( groundTruth1 );
-    reqTraining.ground_truths.push_back( groundTruth2 );
+    req_training.ground_truths.push_back( groundTruth1 );
+    req_training.ground_truths.push_back( groundTruth2 );
 
     // Type of the edge features
-    reqTraining.edge_feature_types.push_back(0);
-    reqTraining.edge_feature_types.push_back(0);
-    reqTraining.edge_feature_types.push_back(0);
+    req_training.edge_feature_types.push_back(0);
+    req_training.edge_feature_types.push_back(0);
+    req_training.edge_feature_types.push_back(0);
 
     // Let's go!
-    call_success = training_srv.call(reqTraining, respTraining);
+    call_success = training_srv.call(req_training, resp_training);
     if (!call_success)
         ROS_ERROR("Service call training failed!");
-    else if (!respTraining.success)
+    else if (!resp_training.success)
         ROS_ERROR("training returned success == false!");
     else
         ROS_INFO("training successful!");
